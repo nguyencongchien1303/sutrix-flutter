@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home-login.component.scss'],
 })
 export class HomeLoginComponent implements OnInit {
-  datas: User[] = [];
+  dataUser: User[] = [];
 
   constructor(private userService: UserService) {}
   loginTypeForm = new FormGroup({
@@ -19,8 +19,22 @@ export class HomeLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getAll().subscribe((res: any) => {
-      this.datas = res;
-      console.log(res);
+      this.dataUser = res;
     });
+  }
+  onSubmit() {
+    console.log(this.dataUser);
+    console.log(this.loginTypeForm.value);
+    for (var i = 0; i < this.dataUser.length; i++) {
+      if (this.dataUser[i].name == this.loginTypeForm.value.name) {
+        if (this.dataUser[i].password == this.loginTypeForm.value.pass) {
+          console.log(true);
+        } else {
+          console.log(false);
+        }
+      } else {
+        console.log(false);
+      }
+    }
   }
 }

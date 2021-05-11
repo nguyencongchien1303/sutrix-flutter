@@ -6,9 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeLoginComponent } from './views/customers/home-login/home-login.component';
+import { SignUpComponent } from './views/customers/sign-up/sign-up.component';
+import { CustomerHomeComponent } from './views/customers/customer-home/customer-home.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeLoginComponent],
+  declarations: [AppComponent, HomeLoginComponent, SignUpComponent, CustomerHomeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

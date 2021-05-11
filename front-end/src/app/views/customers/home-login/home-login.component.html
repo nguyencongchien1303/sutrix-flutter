@@ -62,6 +62,7 @@
                   <div class="formsix-e">
                     <div class="form-group i-password">
                       <input
+                        formControlName="password"
                         type="password"
                         class="form-control"
                         required=""
@@ -77,10 +78,15 @@
               </div>
               <br />
               <div class="login_btn_wrapper">
-                <a href="#" class="btn btn-primary login_btn"> Login </a>
+                <a (click)="onSubmit()" class="btn btn-primary login_btn">
+                  Login
+                </a>
               </div>
               <div class="login_message">
-                <p>Bạn chưa có tài khoản ? <a href="#"> Đăng ký ngay </a></p>
+                <p>
+                  Bạn chưa có tài khoản ?
+                  <a routerLink="/customer/sign-up"> Đăng ký ngay </a>
+                </p>
               </div>
             </div>
           </div>
