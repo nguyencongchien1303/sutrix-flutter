@@ -24,17 +24,15 @@ export class HomeLoginComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.dataUser);
-    console.log(this.loginTypeForm.value);
-    for (var i = 0; i < this.dataUser.length; i++) {
-      if (this.dataUser[i].name == this.loginTypeForm.value.name) {
-        if (this.dataUser[i].password == this.loginTypeForm.value.pass) {
-          console.log(true);
-        } else {
-          console.log(false);
-        }
+    console.log(this.loginTypeForm.value.password);
+    for (var i = 0; i < this.dataUser.length; i++)
+      if (
+        this.dataUser[i].name == this.loginTypeForm.value.name &&
+        this.dataUser[i].password == this.loginTypeForm.value.password
+      ) {
+        console.log(true);
       } else {
         console.log(false);
       }
-    }
   }
 }
